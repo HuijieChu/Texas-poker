@@ -38,27 +38,22 @@ class ViewController: UIViewController {
         @IBOutlet weak var a3: UIImageView!
         @IBOutlet weak var a4: UIImageView!
         @IBOutlet weak var a5: UIImageView!
-    //variance of hand pokers
-        @IBOutlet weak var hand1: UIImageView!
-        
-        @IBOutlet weak var hand2: UIImageView!
     
+
     lazy var images_5 = [UIImageView](arrayLiteral: a1,a2,a3,a4,a5)
-    lazy var images_2 = [UIImageView](arrayLiteral: hand1,hand2)
     lazy var images = [UIImageView](arrayLiteral: image_1,image_2,image_3,image_4,image_5,image_6,image_7,image_8,image_9,image_10,image_11,image_12,image_13)
     var original = [UIImageView:CGPoint]()
     var original_images_5 = [UIImageView:CGPoint]()
     var original_images_2 = [UIImageView:CGPoint]()
-    var drag_item:UIImageView!
+    var choose_item:UIImageView!
+    var tap_item:UIImageView!
+    var state = 0
+    var suit = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         //addPanGesture()
         view.isMultipleTouchEnabled = true
         // Do any additional setup after loading the view
-        for item in images
-        {
-            original[item] = item.center
-        }
     }
 
 
@@ -127,73 +122,53 @@ class ViewController: UIViewController {
         image_12.image = #imageLiteral(resourceName: "d12") ;
         image_13.image = #imageLiteral(resourceName: "d13") ;
     }
-    func addPanGesture(view:UIView)
-    {
-        let pan = UIPanGestureRecognizer(target:self,action:#selector(ViewController.handlePan(_:)))
-        view.addGestureRecognizer(pan)
 
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first!
         let location = touch.location(in: self.view)
-        //print(location)
-        for item in images
+        if state == 1
         {
-            //var p = item.convert(item.frame, to: self.view)
-            let point = item.convert(location,from:touch.view)
-            if (point == location)
+            for item in images
             {
-                print("OK")
-                drag_item = item
-                addPanGesture(view: item)
-                break
+                //var p = item.convert(item.frame, to: self.view)
+                let point = item.convert(location,from:touch.view)
+                if (point == location)
+                {
+                    choose_item = item
+                    tap_item.image = choose_item.image
+                    tap_item.alpha = 1.0
+                    choose_item = nil
+                    break
+                }
             }
+            state = 0
         }
-    }
-//pangesture for pokers
-    var fileViewOrigin: CGPoint!
-    @IBAction func handlePan(_ sender: UIPanGestureRecognizer) {
-        guard sender.view! != nil else{return}
-//start the drag version
-        let piece = sender.view!
-        let translation = sender.translation(in:view)
-        if sender.state == .began || sender.state == .changed
+        if state == 0
         {
-            piece.center = CGPoint(x:piece.center.x + translation.x,y:piece.center.y + translation.y)
-            sender.setTranslation(CGPoint.zero, in:view)
+            for item in images_5
+            {
+                //var p = item.convert(item.frame, to: self.view)
+                let point = item.convert(location,from:touch.view)
+                if (point == location)
+                {
+                    tap_item = item
+                    item.alpha = 0.5
+                    
+                }
+            }
+            state = 1
         }
+        
+    }
 
-        if sender.state == .ended
-        {
-            var flag = 0
-            for it in images_5
-            {
-                if (it.convert(piece.frame, from: piece)).contains(piece.center)
-                {
-                    flag = 1
-                    it.image = drag_item.image
-                    UIView.animate(withDuration: 0.3, animations: {
-                        piece.alpha = 0.0
-                    })
-                }
-                
-            }
-            for it in images_2
-            {
-                if (piece.convert(it.frame, from: it)).contains(it.center)
-                {
-                    flag = 1
-                    it.image = drag_item.image
-                    UIView.animate(withDuration: 0.3, animations: {
-                        piece.alpha = 0.0
-                    })
-                }
-            }
-            piece.center = original[drag_item]!
-            piece.alpha = 1.0
-        }
+    @IBAction func ResetButton(_ sender: UIButton) {
+        tap_item.image = #imageLiteral(resourceName: "截屏2020-01-31下午6.07.07")
+        state = 1
     }
+    
+        
+     
+    
     
     
 }

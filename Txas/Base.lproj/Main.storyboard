@@ -8,6 +8,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="GcF-Y9-iyM">
+            <objects>
+                <viewController id="e59-ce-rZe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fxX-6u-g0H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7En-ik-BQW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ro9-lM-o0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-424" y="123"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Txas" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,19 +30,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzQ-Mz-T9H">
-                                <rect key="frame" x="282" y="82" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="弃牌人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkV-c0-eq4">
-                                <rect key="frame" x="192" y="89" width="86" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="hWN-t6-iFp">
                                 <rect key="frame" x="107" y="437" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,82 +189,73 @@
                                     <constraint firstAttribute="height" constant="200" id="wgi-b8-Q5g"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="cnL-fR-vCJ">
-                                <rect key="frame" x="57" y="236" width="300" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" id="DBM-gR-re8">
+                                <rect key="frame" x="90" y="203" width="250" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSp-mZ-wo4">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.07.07" translatesAutoresizingMaskIntoConstraints="NO" id="Jig-eN-se5">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="XbK-GV-zfX"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.07.07" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-mi-pC9">
-                                                <rect key="frame" x="60" y="0.0" width="60" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="3Jq-zQ-WQF"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.07.07" translatesAutoresizingMaskIntoConstraints="NO" id="WY4-0R-Rfd">
-                                                <rect key="frame" x="120" y="0.0" width="60" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="5SL-fx-uHy"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.07.07" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-o4-yES">
-                                                <rect key="frame" x="180" y="0.0" width="60" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="TrC-HP-me5"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.07.07" translatesAutoresizingMaskIntoConstraints="NO" id="MCt-IB-Ssw">
-                                                <rect key="frame" x="240" y="0.0" width="60" height="75"/>
-                                            </imageView>
-                                        </subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RqV-el-jsQ" userLabel="a1">
+                                        <rect key="frame" x="0.0" y="-7.1054273576010019e-15" width="50" height="98.666666666666657"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="rxJ-ua-QC4"/>
+                                            <constraint firstAttribute="width" constant="50" id="Qhn-vb-Pi3"/>
                                         </constraints>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Kw-284">
-                                        <rect key="frame" x="0.0" y="75" width="300" height="75"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.11.34" translatesAutoresizingMaskIntoConstraints="NO" id="qms-eh-9sg">
-                                                <rect key="frame" x="90" y="0.0" width="60" height="75"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="截屏2020-01-31下午6.11.34" translatesAutoresizingMaskIntoConstraints="NO" id="RGh-y6-F1c">
-                                                <rect key="frame" x="150" y="0.0" width="60" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="fR6-ne-Rhd"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihw-Jz-AAZ" userLabel="a2">
+                                        <rect key="frame" x="50" y="-7.1054273576010019e-15" width="50" height="98.666666666666657"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="ScY-ZK-SXC"/>
+                                            <constraint firstAttribute="width" constant="50" id="ftb-nT-EPy"/>
                                         </constraints>
-                                        <edgeInsets key="layoutMargins" top="0.0" left="90" bottom="0.0" right="90"/>
-                                    </stackView>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-Wv-dM8" userLabel="a3">
+                                        <rect key="frame" x="100" y="-7.1054273576010019e-15" width="50" height="98.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="80M-N7-JYV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0bY-lr-v3x" userLabel="a4">
+                                        <rect key="frame" x="150" y="-7.1054273576010019e-15" width="50" height="98.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Jfu-xe-Yyt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lEL-nE-QVE" userLabel="a5">
+                                        <rect key="frame" x="200" y="-7.1054273576010019e-15" width="50" height="98.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="s0D-YS-21W"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="MJZ-V7-XYy"/>
-                                    <constraint firstAttribute="width" constant="300" id="SyN-Vq-wqb"/>
+                                    <constraint firstAttribute="height" constant="100" id="Oqr-zQ-rTe"/>
+                                    <constraint firstAttribute="width" constant="250" id="cAs-yH-cHD"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-pz-4Pm">
+                                <rect key="frame" x="133" y="373" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iZ-Jp-vra">
+                                <rect key="frame" x="305" y="333" width="44" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="ResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXT-yF-vGl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RWd-NO-kgN" appends="YES" id="dVL-VM-RKa"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="a1" destination="Jig-eN-se5" id="oZ7-Yq-7G8"/>
-                        <outlet property="a2" destination="hZG-mi-pC9" id="PoW-Ok-are"/>
-                        <outlet property="a3" destination="WY4-0R-Rfd" id="ATh-UP-w1z"/>
-                        <outlet property="a4" destination="GBh-o4-yES" id="jzJ-ux-bVV"/>
-                        <outlet property="a5" destination="MCt-IB-Ssw" id="FAF-OK-cop"/>
-                        <outlet property="hand1" destination="qms-eh-9sg" id="ik0-Pm-mvE"/>
-                        <outlet property="hand2" destination="RGh-y6-F1c" id="fC1-Jy-wFj"/>
+                        <outlet property="a1" destination="RqV-el-jsQ" id="ge6-Wx-ADA"/>
+                        <outlet property="a2" destination="ihw-Jz-AAZ" id="jx9-wl-izH"/>
+                        <outlet property="a3" destination="Qfk-Wv-dM8" id="AL1-fB-wUK"/>
+                        <outlet property="a4" destination="0bY-lr-v3x" id="Lox-8F-27w"/>
+                        <outlet property="a5" destination="lEL-nE-QVE" id="eH7-cL-gtV"/>
                         <outlet property="image_1" destination="puO-NO-ZmV" id="hXX-Gq-tdq"/>
                         <outlet property="image_10" destination="fTd-Hv-1tB" id="9pn-JG-9hQ"/>
                         <outlet property="image_11" destination="mnX-Dz-bz6" id="RCA-YO-SZy"/>
@@ -279,13 +272,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Ix5-ej-K9c">
+                <tapGestureRecognizer id="RWd-NO-kgN">
                     <connections>
-                        <action selector="handlePan:" destination="BYZ-38-t0r" id="ADX-aY-lv6"/>
+                        <outlet property="delegate" destination="8bC-Xf-vdC" id="ocN-2J-GfP"/>
                     </connections>
-                </panGestureRecognizer>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="484" y="123"/>
         </scene>
     </scenes>
     <resources>
@@ -302,7 +295,6 @@
         <image name="a7" width="35" height="50"/>
         <image name="a8" width="35" height="50"/>
         <image name="a9" width="35" height="50"/>
-        <image name="截屏2020-01-31下午6.07.07" width="521.33331298828125" height="374.66665649414062"/>
-        <image name="截屏2020-01-31下午6.11.34" width="326" height="200"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>
