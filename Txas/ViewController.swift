@@ -42,93 +42,121 @@ class ViewController: UIViewController {
 
     lazy var images_5 = [UIImageView](arrayLiteral: a1,a2,a3,a4,a5)
     lazy var images = [UIImageView](arrayLiteral: image_1,image_2,image_3,image_4,image_5,image_6,image_7,image_8,image_9,image_10,image_11,image_12,image_13)
-    var original = [UIImageView:CGPoint]()
-    var original_images_5 = [UIImageView:CGPoint]()
-    var original_images_2 = [UIImageView:CGPoint]()
+    lazy var image_poker = [UIImage]()
+    var someDict:[UIImageView:String] = [:]
     var choose_item:UIImageView!
     var tap_item:UIImageView!
     var state = 0
     var suit = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addPanGesture()
+        //addPanGesture
         view.isMultipleTouchEnabled = true
         // Do any additional setup after loading the view
+        for i in 0..<13
+        {
+            var tempImage = UIImage(named: "a\(i+1)")!
+            image_poker.append(tempImage)
+        }
+        for i in 0..<13
+        {
+            var tempImage = UIImage(named: "b\(i+1)")!
+            image_poker.append(tempImage)
+        }
+        for i in 0..<13
+        {
+            var tempImage = UIImage(named: "c\(i+1)")!
+            image_poker.append(tempImage)
+        }
+        for i in 0..<13
+        {
+            var tempImage = UIImage(named: "d\(i+1)")!
+            image_poker.append(tempImage)
+        }
     }
 
 
     
-//control button of changing color
-    @IBAction func spadeButton(_ sender: UIButton) {
-        image_1.image = #imageLiteral(resourceName: "a1");
-        image_2.image = #imageLiteral(resourceName: "a2") ;
-        image_3.image = #imageLiteral(resourceName: "a3") ;
-        image_4.image = #imageLiteral(resourceName: "a4") ;
-        image_5.image = #imageLiteral(resourceName: "a5") ;
-        image_6.image = #imageLiteral(resourceName: "a6") ;
-        image_7.image = #imageLiteral(resourceName: "a7") ;
-        image_8.image = #imageLiteral(resourceName: "a8") ;
-        image_9.image = #imageLiteral(resourceName: "a9") ;
-        image_10.image = #imageLiteral(resourceName: "a10") ;
-        image_11.image = #imageLiteral(resourceName: "a11") ;
-        image_12.image = #imageLiteral(resourceName: "a12") ;
-        image_13.image = #imageLiteral(resourceName: "a13") ;
-        
+    
+    @IBAction func pokerDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            suit = 0
+            for (index,item) in images.enumerated()
+            {
+                item.image = UIImage(named: "a\(index+1)")
+                for (key, value) in someDict
+                {
+                    var temp = someDict[key]
+                    if String(suit*100+index) == temp
+                    {
+                        item.image = nil
+                    }
+                }
+            }
+            
+        case 1:
+            suit = 1
+            for (index,item) in images.enumerated()
+            {
+                item.image = UIImage(named: "b\(index+1)")
+                for (key, value) in someDict
+                {
+                    var temp = someDict[key]
+                    if String(suit*100+index) == temp
+                    {
+                        item.image = nil
+                    }
+                }
+            }
+            
+        case 2:
+            suit = 2
+            for (index,item) in images.enumerated()
+            {
+                item.image = UIImage(named: "c\(index+1)")
+                for (key, value) in someDict
+                {
+                    var temp = someDict[key]
+                    if String(suit*100+index) == temp
+                    {
+                        item.image = nil
+                    }
+                }
+            }
+            
+        case 3:
+            suit = 3
+            for (index,item) in images.enumerated()
+            {
+                item.image = UIImage(named: "d\(index+1)")
+                for (key, value) in someDict
+                {
+                    var temp = someDict[key]
+                    if String(suit*100+index) == temp
+                    {
+                        item.image = nil
+                    }
+                }
+            }
+            
+        default:
+            for (index,item) in images.enumerated()
+            {
+                item.image = nil
+            }
+            
+        }
     }
-    @IBAction func heartsButton(_ sender: UIButton) {
-        print (a1.frame)
-        print (a2.frame)
-        image_1.image = #imageLiteral(resourceName: "b1") ;
-        image_2.image = #imageLiteral(resourceName: "b2") ;
-        image_3.image = #imageLiteral(resourceName: "b3") ;
-        image_4.image = #imageLiteral(resourceName: "b4") ;
-        image_5.image = #imageLiteral(resourceName: "b5") ;
-        image_6.image = #imageLiteral(resourceName: "b6") ;
-        image_7.image = #imageLiteral(resourceName: "b7") ;
-        image_8.image = #imageLiteral(resourceName: "b8") ;
-        image_9.image = #imageLiteral(resourceName: "b9") ;
-        image_10.image = #imageLiteral(resourceName: "b10") ;
-        image_11.image = #imageLiteral(resourceName: "b11") ;
-        image_12.image = #imageLiteral(resourceName: "b12") ;
-        image_13.image = #imageLiteral(resourceName: "b13") ;
-    }
-    @IBAction func plumButton(_ sender: UIButton) {
-        image_1.image = #imageLiteral(resourceName: "c1") ;
-        image_2.image = #imageLiteral(resourceName: "c2") ;
-        image_3.image = #imageLiteral(resourceName: "c3") ;
-        image_4.image = #imageLiteral(resourceName: "c4") ;
-        image_5.image = #imageLiteral(resourceName: "c5") ;
-        image_6.image = #imageLiteral(resourceName: "c6") ;
-        image_7.image = #imageLiteral(resourceName: "c7") ;
-        image_8.image = #imageLiteral(resourceName: "c8") ;
-        image_9.image = #imageLiteral(resourceName: "c9") ;
-        image_10.image = #imageLiteral(resourceName: "c10") ;
-        image_11.image = #imageLiteral(resourceName: "c11") ;
-        image_12.image = #imageLiteral(resourceName: "c12") ;
-        image_13.image = #imageLiteral(resourceName: "c13") ;
-    }
-    @IBAction func squareButton(_ sender: UIButton) {
-        image_1.image = #imageLiteral(resourceName: "d1") ;
-        image_2.image = #imageLiteral(resourceName: "d2") ;
-        image_3.image = #imageLiteral(resourceName: "d3") ;
-        image_4.image = #imageLiteral(resourceName: "d4") ;
-        image_5.image = #imageLiteral(resourceName: "d5") ;
-        image_6.image = #imageLiteral(resourceName: "d6") ;
-        image_7.image = #imageLiteral(resourceName: "d7") ;
-        image_8.image = #imageLiteral(resourceName: "d8") ;
-        image_9.image = #imageLiteral(resourceName: "d9") ;
-        image_10.image = #imageLiteral(resourceName: "d10") ;
-        image_11.image = #imageLiteral(resourceName: "d11") ;
-        image_12.image = #imageLiteral(resourceName: "d12") ;
-        image_13.image = #imageLiteral(resourceName: "d13") ;
-    }
+
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first!
         let location = touch.location(in: self.view)
         if state == 1
         {
-            for item in images
+            for (index,item) in images.enumerated()
             {
                 //var p = item.convert(item.frame, to: self.view)
                 let point = item.convert(location,from:touch.view)
@@ -137,11 +165,12 @@ class ViewController: UIViewController {
                     choose_item = item
                     tap_item.image = choose_item.image
                     tap_item.alpha = 1.0
-                    choose_item = nil
+                    choose_item.image = nil
+                    someDict[tap_item] = String(index+suit*100)
+                    state = 0
                     break
                 }
             }
-            state = 0
         }
         if state == 0
         {
@@ -153,20 +182,31 @@ class ViewController: UIViewController {
                 {
                     tap_item = item
                     item.alpha = 0.5
-                    
+                    state = 1
+                    break
                 }
             }
-            state = 1
+            
         }
         
     }
-
+    
+    
     @IBAction func ResetButton(_ sender: UIButton) {
+        choose_item.image = tap_item.image
         tap_item.image = #imageLiteral(resourceName: "截屏2020-01-31下午6.07.07")
+        tap_item.alpha = 0.5
         state = 1
     }
     
+    @IBAction func finishSelect(_ sender: UIButton) {
+        for item in images_5
+        {
+            print(someDict[item])
+        }
         
+    }
+    
      
     
     

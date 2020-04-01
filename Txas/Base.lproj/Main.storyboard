@@ -30,69 +30,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="hWN-t6-iFp">
-                                <rect key="frame" x="107" y="437" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcY-2l-bev">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPC-T0-UNM">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="bfQ-7G-dUW"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="♠️"/>
-                                                <connections>
-                                                    <action selector="spadeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sxu-mi-T4x"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-iC-FMq">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="♥️"/>
-                                                <connections>
-                                                    <action selector="heartsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d1p-bf-uTh"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDd-Ps-zBK">
-                                        <rect key="frame" x="0.0" y="100" width="200" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w5-rs-ATb">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="eTo-i0-lfw"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="♣️"/>
-                                                <connections>
-                                                    <action selector="plumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjA-mn-gi3"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ4-qR-rQL">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="X8V-ON-d7T"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="♦️"/>
-                                                <connections>
-                                                    <action selector="squareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1K-JJ-Sba"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="vaF-JN-kaN"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Iw9-n5-RE1"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="jUN-hs-iqn">
                                 <rect key="frame" x="40" y="645" width="350" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -233,6 +170,9 @@
                                 <rect key="frame" x="133" y="373" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="finishSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPO-Zg-WVw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iZ-Jp-vra">
                                 <rect key="frame" x="305" y="333" width="44" height="40"/>
@@ -242,9 +182,26 @@
                                     <action selector="ResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXT-yF-vGl"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sIK-f2-z7e">
+                                <rect key="frame" x="30" y="567" width="354" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="♠️"/>
+                                    <segment title="❤️"/>
+                                    <segment title="♣️"/>
+                                    <segment title="♦️"/>
+                                </segments>
+                                <connections>
+                                    <action selector="pokerDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="HIC-WL-kwP"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sIK-f2-z7e" secondAttribute="trailing" constant="30" id="M3J-2k-6oz"/>
+                            <constraint firstItem="sIK-f2-z7e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="rud-0O-TcV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="RWd-NO-kgN" appends="YES" id="dVL-VM-RKa"/>
